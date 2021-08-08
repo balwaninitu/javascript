@@ -23,6 +23,7 @@ console.log(str[3]);
 //string properties is length
 console.log(str.length);
 
+<<<<<<< HEAD
 //string method
 console.log(str.toUpperCase());
 
@@ -42,5 +43,7 @@ console.log(res2);
 
 
 
+=======
+>>>>>>> 46cc2308ad8f26c422c0787c5f44b24a75276ef9
 
 
