@@ -23,7 +23,6 @@ console.log(str[3]);
 //string properties is length
 console.log(str.length);
 
-<<<<<<< HEAD
 //string method
 console.log(str.toUpperCase());
 
@@ -41,9 +40,20 @@ let res2 = str.replace('I', 'we');
 
 console.log(res2);
 
+//Numbers
+//order of operation B I D M A S
+
+let res3 = 5 * (4 - 2) ** 2;
+
+console.log(res3);
+
+//concatenate numbers and string
+
+let res4 = str + " " + res3 + ' result';
+
+console.log(res4);
 
 
-=======
->>>>>>> 46cc2308ad8f26c422c0787c5f44b24a75276ef9
+
 
 
