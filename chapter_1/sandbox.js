@@ -13,3 +13,15 @@ console.log(age);
 const points = 70;
 //points = 80;
 console.log(points);
+
+let str = "I love javascript";
+
+//string character
+console.log(str[3]);
+
+
+//string properties is length
+console.log(str.length);
+
+
+
