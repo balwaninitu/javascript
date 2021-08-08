@@ -85,9 +85,25 @@ for (let i = 0; i < names.length; i++) {
     let html = `<div>${names[i]}</div>`;
     console.log(html);
 }
+//while loop
 
+let i = 0;
 
+while (i < names.length) {
+    console.log('val of i is: ', names[i])
+    i++;
+}
 
+//do while loop
+
+//let j = 5;
+
+let j = 3;
+
+do {
+    console.log('value of j is: ', j)
+    j++;
+} while (j < 5);
 
 
 
