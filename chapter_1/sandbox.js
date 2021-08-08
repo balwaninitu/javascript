@@ -77,6 +77,15 @@ html = `
 
 console.log(html);
 
+//loop in html
+
+let names = ["ria", "tia", "pia"];
+
+for (let i = 0; i < names.length; i++) {
+    let html = `<div>${names[i]}</div>`;
+    console.log(html);
+}
+
 
 
 
