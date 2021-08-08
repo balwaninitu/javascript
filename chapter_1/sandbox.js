@@ -47,20 +47,36 @@ let res3 = 5 * (4 - 2) ** 2;
 
 console.log(res3);
 
+const title = 'The magic Compass'
+const author = 'Thea Stilton';
+const likes = 30;
+
 //concatenate numbers and string
 
 let res4 = str + " " + res3 + ' result';
 
 console.log(res4);
 
-//template string
-const title = 'The magic Compass'
-const author = 'Thea Stilton';
-const likes = 30;
+res6 = 'The ' + author + ' book name ' + title + ' got ' + likes + ' likes';
+console.log(res6);
 
+//template string
 
 let res5 = `The ${author} book name ${title} got ${likes} likes`;
 console.log(res5);
+
+//creating html template
+
+html = `
+
+<h2>${author}</h2>
+<p>${title}</p>
+<span>This book has ${likes} likes</span>
+
+`;
+
+console.log(html);
+
 
 
 
