@@ -53,6 +53,15 @@ let res4 = str + " " + res3 + ' result';
 
 console.log(res4);
 
+//template string
+const title = 'The magic Compass'
+const author = 'Thea Stilton';
+const likes = 30;
+
+
+let res5 = `The ${author} book name ${title} got ${likes} likes`;
+console.log(res5);
+
 
 
 
