@@ -29,10 +29,55 @@ const speak = function (name = 'Nitu', time = 'Night') {
 speak('titu');
 
 const calcArea = function (radius) {
-    let area = 3.14 * radius ** 2;
-    return area;
+
+    return 3.14 * radius ** 2;
+
+    // let area = 3.14 * radius ** 2;
+    // return area;
 };
 
 const area = calcArea(5);
 console.log(area);
+
+//arrow functions
+
+// const calArea = (radius) => {
+
+//     return 3.14 * radius ** 2;
+// };
+
+
+//another approach to write same arrow function as above
+const calArea = radius => 3.14 * radius ** 2;
+
+const a = calArea(10);
+console.log('area is: ', a);
+
+const greets = () => 'hello world';
+
+const result = greets();
+
+console.log(result);
+
+const bill = function (products, tax) {
+    let total = 0;
+    for (i = 0; i < products.length; i++) {
+        total += products[i] + products[i] * tax;
+    }
+    return total;
+}
+
+//convert to arrow function
+
+// const bill = (products, tax) => {
+//     let total = 0;
+//     for (i = 0; i < products.length; i++) {
+//         total += products[i] + products[i] * tax;
+//     }
+//     return total;
+
+// };
+
+console.log(bill([10, 20, 30], 0.2));
+
 
