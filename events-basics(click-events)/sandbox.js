@@ -13,7 +13,11 @@
 const items = document.querySelectorAll('li');
 //nodelist to loop over
 items.forEach(item => {
-    item.addEventListener('click', () => {
-        console.log('item clicked');
+    item.addEventListener('click', e => {
+        //console.log('item clicked');
+        //console.log(e);
+        //console.log(e.target);
+        //console.log(item);
+        e.target.style.textDecoration = 'line-through';
     });
 });
