@@ -40,7 +40,15 @@ form.addEventListener('submit', e => {
   //console.log(score);
 
   //show result on page
+  //scrollto takes two args x and y
+  scrollTo(0,0);
   result.querySelector('span').textContent = `${score}%`;
   result.classList.remove('d-done');
 
 });
+
+//window object
+
+// setTimeout(() => {
+//     alert('hello, ninjas');
+// }, 3000);
