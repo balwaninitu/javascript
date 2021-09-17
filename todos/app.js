@@ -16,7 +16,7 @@ const generateTemplate = todo => {
       list.innerHTML += html;
 
 }
-
+//add todos
 addForm.addEventListener('submit' , e => {
 
     //prevent reloading of page
@@ -34,8 +34,17 @@ addForm.addEventListener('submit' , e => {
 
     }
 
-    
+});
 
-
-
+/*event delegation by attaching event listener to list
+and mentioning if only click at trash it will delete same function will
+apply to new added list
+*/
+//delete todos
+list.addEventListener('click', e => {
+    //check if contains delete class
+    if(e.target.classList.contains('delete')){
+        //navigate to the list tag which need to delete
+        e.target.parentElement.remove();
+    }
 });
