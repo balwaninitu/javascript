@@ -15,7 +15,7 @@ console.log('getSeconds', now.getSeconds());
 
 
 //timestamps
-//displays number of milliseconds since 1 Jan 1970
+//displays number of milliseconds since 12AM 1 Jan 1970
 console.log('timestamp', now.getTime());
 
 //date strings
