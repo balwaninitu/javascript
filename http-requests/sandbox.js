@@ -9,9 +9,12 @@
   //listen until readystate is 4
   request.addEventListener('readystatechange', () => {
       //console.log(request, request.readyState);
-      if(request.readyState == 4){
+      if(request.readyState == 4 && request.status == 200){
           //it will return data on console
           console.log(request.responseText)
+      } else if(request.readyState == 4) {
+          console.log('could not fetch the data');
+
       }
   })
 
