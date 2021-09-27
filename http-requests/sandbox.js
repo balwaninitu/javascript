@@ -12,7 +12,9 @@ const getTodos = (callback) => {
   request.addEventListener('readystatechange', () => {
       //console.log(request, request.readyState);
       if(request.readyState == 4 && request.status == 200){
-          callback(undefined, request.responseText);
+          //parse method takes json and convert it into js object
+          const data = JSON.parse(request.responseText);
+          callback(undefined, data);
           //it will return data on console
           //console.log(request.responseText)
       } else if(request.readyState == 4) {
@@ -23,10 +25,17 @@ const getTodos = (callback) => {
   });
 
  //setting up request
- request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
- //send request
- request.send();
+//  request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+//  //send request
+//  request.send();
+//};
+
+//setting up request
+request.open('GET', 'todos.json');
+//send request
+request.send();
 };
+
 
 console.log(1);
 console.log(2);
