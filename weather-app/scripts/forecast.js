@@ -1,3 +1,5 @@
+//this file interact with api acuweather
+
 
 const key = '2nCYFTjSdxPEP5dNtOVApLPEq8cAU3zk';
 
@@ -33,14 +35,12 @@ const getCity = async (city) => {
 // .then(data => console.log(data))
 // .catch(err => console.log(err));
 
-getCity('mumbai').then(data => {
-    return getWeather(data.Key);
-}).then(data => {
-    console.log(data);
-})
-.catch(err => console.log(err));
-
-
+// getCity('mumbai').then(data => {
+//     return getWeather(data.Key);
+// }).then(data => {
+//     console.log(data);
+// })
+// .catch(err => console.log(err));
 
 
 //getWeather("204842");
