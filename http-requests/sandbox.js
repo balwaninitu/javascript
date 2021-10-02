@@ -22,6 +22,12 @@ request.send();
 //specify callback function
 getTodos('json/luigi.json').then(data => {
 console.log('promise resolved', data);
+return getTodos('json/mario.json');
+}).then(data => {
+    console.log('promise 2 resolved', data);
+    return getTodos('json/shaun.json', data)
+}).then(data => {
+    console.log('promise 3 resolved', data);
 }).catch((err) => {
     console.log('promise rejected:', err);
 });
