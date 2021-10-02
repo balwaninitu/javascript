@@ -1,53 +1,57 @@
- //make http request to get data from another server
- //we make these requests to API end points
+ 
+const getTodos = (resource) => {
 
-//wrap up below code in function for reusability
-const getTodos = (resource , callback) => {
- //create request object
+    return new Promise((resolve, reject) => {
  const request = new XMLHttpRequest();
-
- //attach eventlistener to get data
-  //ready state meaning changes in request
-  //listen until readystate is 4
   request.addEventListener('readystatechange', () => {
-      //console.log(request, request.readyState);
-      if(request.readyState == 4 && request.status == 200){
-          //parse method takes json and convert it into js object
-          const data = JSON.parse(request.responseText);
-          callback(undefined, data);
-          //it will return data on console
-          //console.log(request.responseText)
+ if(request.readyState == 4 && request.status == 200){
+         const data = JSON.parse(request.responseText);
+          resolve(data);
       } else if(request.readyState == 4) {
-          console.log('could not fetch the data');
-           callback('could not fetch data', undefined);
+          reject('error getting resource')
 
       }
   });
 
- //setting up request
-//  request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
-//  //send request
-//  request.send();
-//};
-
-//setting up request
 request.open('GET', resource);
-//send request
 request.send();
+});
+
 };
-
-
-
 //define callback function to do specific task with data
 //specify callback function
-getTodos('json/luigi.json', (err, data) => {
-    console.log(data);
-getTodos('json/mario.json', (err, data) => {
-        console.log(data);
-getTodos('json/shaun.json', (err, data) => {
-            console.log(data);
-   
-   });
-
-  });
+getTodos('json/luigi.json').then(data => {
+console.log('promise resolved', data);
+}).catch((err) => {
+    console.log('promise rejected:', err);
 });
+
+//promise example
+//avoid calling json many times
+
+const getSomething = () => {
+
+    return new Promise((resolve, reject) => {
+        //fetch something
+       // resolve('some data');
+        reject('some error');
+    });
+};
+
+//messy and confusing
+// getSomething().then((data) => {
+//     console.log(data);
+// }, (err) => {
+//     console.log(err)
+// });
+
+//better approach
+getSomething().then(data => {
+    console.log(data);
+}).catch(err => {
+    console.log(err);
+})
+
+
+
+
