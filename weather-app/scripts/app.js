@@ -32,15 +32,17 @@ const updateUI = (data) => {
     const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
+    // const result = condition ? 'value 1' : 'value 2';
+    // console.log(result);
 
+    let timeSrc = weather.IsDayTime ? 'img/day.svg': 'img/night.svg';
 
-
-    let timeSrc = null;
-    if(weather.IsDayTime){
-        timeSrc = 'img/day.svg';     
-    } else {
-        timeSrc = 'img/night.svg';
-    }
+    // let timeSrc = null;
+    // if(weather.IsDayTime){
+    //     timeSrc = 'img/day.svg';     
+    // } else {
+    //     timeSrc = 'img/night.svg';
+    // }
     time.setAttribute('src', timeSrc);
 
     //remove d-none if present
@@ -79,3 +81,7 @@ updateCity(city)
 .catch(err => console.log(err));
 
 });
+
+//ternary operator if condition is true it will give value 1, if false value 2
+//const result = condition ? 'value 1' : 'value 2';
+//console.log(result);
