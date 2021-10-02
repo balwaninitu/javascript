@@ -2,7 +2,7 @@
  //we make these requests to API end points
 
 //wrap up below code in function for reusability
-const getTodos = (callback) => {
+const getTodos = (resource , callback) => {
  //create request object
  const request = new XMLHttpRequest();
 
@@ -31,28 +31,23 @@ const getTodos = (callback) => {
 //};
 
 //setting up request
-request.open('GET', 'todos.json');
+request.open('GET', resource);
 //send request
 request.send();
 };
 
 
-console.log(1);
-console.log(2);
 
 //define callback function to do specific task with data
 //specify callback function
-getTodos((err, data) => {
-    console.log('callback fired');
-    //console.log(err, data)
-    if(err){
-        console.log(err);
-    } else {
+getTodos('json/luigi.json', (err, data) => {
+    console.log(data);
+getTodos('json/mario.json', (err, data) => {
         console.log(data);
-    }
+getTodos('json/shaun.json', (err, data) => {
+            console.log(data);
+   
+   });
 
+  });
 });
-
-console.log(3);
-console.log(4);
-
