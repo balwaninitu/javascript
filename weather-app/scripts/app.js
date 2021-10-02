@@ -9,10 +9,13 @@ const updateCity = async (city) => {
     const cityDets = await getCity(city);
     const weather = await getWeather(cityDets.Key);
 
+    /*when property and value is same like below we can use
+    object shorthand notation i.e deleting one of those and it will
+    be same*/
     return {
-        cityDets: cityDets,
-        weather: weather
-    };
+        //cityDets: cityDets,
+        cityDets, weather };
+       // weather: weather
 };
 
 cityForm.addEventListener('submit', e => {
