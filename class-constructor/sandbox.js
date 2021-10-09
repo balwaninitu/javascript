@@ -3,6 +3,21 @@ class User{
         //set up properties
         this.username = username;
         this.email = email;
+        this.score = 0;
+    }
+    //set up method
+    login(){
+        console.log(`${this.username} just logged in`);
+        return this;
+    }
+    logout(){
+        console.log(`${this.username} just logged out`); 
+        return this; 
+    }
+    incScore(){
+        this.score += 1;
+        console.log(`${this.username} has a score of ${this.score}`);
+        return this;
 
     }
 
@@ -11,7 +26,22 @@ class User{
 const userOne = new User('mario', 'mario@co.sg');
 const userTwo = new User('luigi', 'luigi@co.sg');
 
-console.log(userOne, userTwo);
+
+
+// console.log(userOne, userTwo);
+// userOne.login();
+// userOne.logout();
+// userOne.incScore();
+// userOne.incScore();
+
+// userTwo.login();
+
+// userTwo.logout();
+
+userOne.login().incScore().incScore().logout();
+
+
+
 
 
 
