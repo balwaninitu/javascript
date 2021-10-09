@@ -17,6 +17,18 @@ User.prototype.logout = function(){
     return this;
 };
 
+function Admin(username, email, title){
+
+    User.call(this, username, email);
+    this.title = title;
+}
+
+Admin.prototype = Object.create(User.prototype);
+
+Admin.prototype.deleteUser = function(){
+
+};
+
 // class User{
 //     constructor(username, email){
 //         //set up properties
@@ -27,7 +39,8 @@ User.prototype.logout = function(){
    
 const userOne = new User('mario', 'mario@co.sg');
 const userTwo = new User('luigi', 'luigi@co.sg');
+const userThree = new Admin('nitu', 'nitu@co.sg', 'black-belt');
 
-console.log(userOne, userTwo);
+console.log(userOne, userTwo, userThree);
 userOne.login().logout();
 userOne.logout();
