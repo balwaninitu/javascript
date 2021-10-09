@@ -7,6 +7,9 @@ const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
+const forecast = new Forecast();
+
+console.log(forecast);
 
 const updateUI = (data) => {
 
@@ -50,20 +53,6 @@ const updateUI = (data) => {
         card.classList.remove('d-none');
     }
 
-}
-
-const updateCity = async (city) => {
-    //console.log(city);
-    const cityDets = await getCity(city);
-    const weather = await getWeather(cityDets.Key);
-
-    /*when property and value is same like below we can use
-    object shorthand notation i.e deleting one of those and it will
-    be same*/
-    return {
-        //cityDets: cityDets,
-        cityDets, weather };
-       // weather: weather
 };
 
 cityForm.addEventListener('submit', e => {
@@ -75,7 +64,7 @@ cityForm.addEventListener('submit', e => {
     cityForm.reset();
 
     //update the ui with new city
-updateCity(city)
+forecast.updateCity(city)
 //.then(data => console.log(data))
 .then(data => updateUI(data))
 .catch(err => console.log(err));
@@ -86,7 +75,7 @@ localStorage.setItem('city', city);
 });
 
 if(localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    forecast.updateCity(localStorage.getItem('city'))
     .then(data => updateUI(data))
     .catch(err => console.log(err));
 }
