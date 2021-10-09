@@ -80,7 +80,16 @@ updateCity(city)
 .then(data => updateUI(data))
 .catch(err => console.log(err));
 
+//set local storage
+localStorage.setItem('city', city);
+
 });
+
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+    .then(data => updateUI(data))
+    .catch(err => console.log(err));
+}
 
 //ternary operator if condition is true it will give value 1, if false value 2
 //const result = condition ? 'value 1' : 'value 2';
