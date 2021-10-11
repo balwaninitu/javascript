@@ -30,3 +30,5 @@ userTwo.login();
 
 //better approach
 const userThree = new User('ridu@sg.co.sg', 'ridu');
+
+
